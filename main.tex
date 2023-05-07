@@ -1,0 +1,89 @@
+% Template for uni reports by Reuben Hunter
+% Feel free to customise this, especially so all our reports don't end up looking exactly the same!
+%
+% Cheat Sheets! Bookmark these for handy reminders:
+% https://www.overleaf.com/latex/templates/a-quick-guide-to-latex/fghqpfgnxggz.pdf
+% http://tug.ctan.org/info/biblatex-cheatsheet/biblatex-cheatsheet.pdf
+
+%comment out packages as needed/not
+
+
+\documentclass[11pt, A4]{article}
+
+\usepackage[utf8]{inputenc}
+
+%images, including wrapping
+\usepackage{graphicx}
+\graphicspath{{images/}}
+\usepackage{subcaption}
+\usepackage[export]{adjustbox}
+\usepackage{wrapfig}
+
+%to insert pdfs:
+\usepackage{pdfpages}
+
+%columns
+\usepackage{multicol}
+
+%tables
+\usepackage{booktabs, multirow} % for borders and merged ranges
+\usepackage{soul}% for underlines
+\usepackage[table]{xcolor} % for cell colors
+\usepackage{changepage,threeparttable} % for wide tables
+
+%uk english dictionary and date format
+\usepackage[UKenglish]{babel}
+\usepackage[UKenglish]{datetime}
+
+% IEEE referencing format
+\usepackage[style=ieee]{biblatex}
+\addbibresource{references.bib}
+\usepackage{csquotes}
+
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ textwidth = 160mm,
+ textheight = 235mm,
+ }
+
+\pagestyle{plain}
+
+\title{This is the Title\\Across Two Lines}
+\author{Your Name}
+\date{\today}
+
+\begin{document}
+\begin{titlepage}
+    \maketitle
+    \thispagestyle{empty}
+\end{titlepage}
+
+\begin{abstract}
+Abstract to the report. Brief summary goes here.
+    
+\end{abstract}
+
+\newpage
+\tableofcontents
+
+\newpage
+\section{Introduction}
+Introduction to the project, state background, motivation, aims and findings.
+
+\input{sample_background}
+
+\section{Results}
+
+\section{Conclusion}
+Final Summary
+
+\newpage
+\section{Bibliography}
+\printbibliography
+
+\newpage
+\appendix 
+\section{Appendices}
+
+\end{document}
