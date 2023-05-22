@@ -7,8 +7,11 @@
 
 %comment out packages as needed/not
 
-
 \documentclass[11pt, A4]{article}
+
+%Font
+%\usepackage{fontspec}
+%\setmainfont{Arial}
 
 \usepackage[utf8]{inputenc}
 
@@ -25,13 +28,19 @@
 %columns
 \usepackage{multicol}
 
+%colour
+\usepackage{xcolor}
+%\color{blue}
+
+
+
 %tables:
 %tip: you can use google sheets to create tables, then use the sheets extension Spreadlatex to convert it to latex code.
 %link: https://workspace.google.com/marketplace/app/spreadlatex/218144906748
 \usepackage{booktabs, multirow} % for borders and merged ranges
 \usepackage{soul}% for underlines
 \usepackage[table]{xcolor} % for cell colors
-\usepackage{changepage,threeparttable} % for wide tables
+%\usepackage{changepage,threeparttable} % for wide tables
 
 %uk english dictionary and date format
 \usepackage[UKenglish]{babel}
@@ -53,7 +62,12 @@
 
 \title{This is the Title\\Across Two Lines}
 \author{Your Name}
-\date{\today}
+
+%set current date every time you compile
+\date{\today} 
+%or set fixed date:
+%\newdate{date}{22}{05}{2023}
+%\date{\displaydate{date}} 
 
 \begin{document}
 \begin{titlepage}
@@ -76,6 +90,10 @@ Introduction to the project, state background, motivation, aims and findings.
 \input{sample_background}
 
 \section{Results}
+\color{red}Note to self, written in red.
+\color{blue}Other colours are available 
+
+\color{black} Colour set back to black again
 
 \section{Conclusion}
 Final Summary
