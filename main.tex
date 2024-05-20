@@ -25,6 +25,16 @@
 %to insert pdfs:
 \usepackage{pdfpages}
 
+%hyperlinks
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=black,
+    urlcolor=blue,
+%    urlstyle{same}
+}
+
 %columns
 \usepackage{multicol}
 
@@ -32,6 +42,17 @@
 \usepackage{xcolor}
 %\color{blue}
 
+% listings 
+% an alternative to \verbatim to display code with automatic line breaks
+\usepackage{listings}
+\lstset{
+basicstyle=\small\ttfamily,
+columns=flexible,
+breaklines=true
+}
+% see https://ctan.org/pkg/listings
+% use \lstinline|...| for \verb
+% or \begin{lstlisting} ... \end{lstlisting}
 
 
 %tables:
@@ -39,7 +60,7 @@
 %link: https://workspace.google.com/marketplace/app/spreadlatex/218144906748
 \usepackage{booktabs, multirow} % for borders and merged ranges
 \usepackage{soul}% for underlines
-\usepackage[table]{xcolor} % for cell colors
+%\usepackage[table]{xcolor} % for cell colors
 %\usepackage{changepage,threeparttable} % for wide tables
 
 %uk english dictionary and date format
@@ -58,6 +79,14 @@
  textheight = 235mm,
  }
 
+%Glossary
+\usepackage[acronym]{glossaries} 
+%see https://www.overleaf.com/learn/latex/Glossaries
+
+\makeglossaries
+\input{glossary}
+
+
 \pagestyle{plain}
 
 \title{This is the Title\\Across Two Lines}
@@ -71,8 +100,36 @@
 
 \begin{document}
 \begin{titlepage}
-    \maketitle
-    \thispagestyle{empty}
+%    \maketitle
+%%%%% OR %%%%%%
+    \begin{center}
+       \vspace*{1cm}
+       \LARGE
+       \textbf{This is the Title\\Across 2 Lines}\\
+       \vspace{0.5cm}
+       \large A subtitle if you want\\
+       \vspace{0.5cm}
+       \today
+       \vspace{1cm}
+       \normalsize
+       
+       By: \textbf{Your name(s) here}
+
+       \vfill
+            
+       Module or Department\\
+       \vspace{0.5cm}
+       
+       \includegraphics[width=0.5\textwidth]{images/UoY_Logo.png}
+       \vspace{0.5cm}
+       
+       School of Physics, Engineering and Technology\\
+       University of York\\
+       United Kingdom\\
+            
+    \end{center}
+    \small
+   \thispagestyle{empty}
 \end{titlepage}
 
 \begin{abstract}
@@ -82,6 +139,8 @@ Abstract to the report. Brief summary goes here.
 
 \newpage
 \tableofcontents
+
+\printglossaries
 
 \newpage
 \section{Introduction}
